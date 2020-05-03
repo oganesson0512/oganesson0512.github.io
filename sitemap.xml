@@ -3,6 +3,26 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://oganesson.top/post/</loc>
+    <lastmod>2020-05-03T16:59:18+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://oganesson.top/tags/</loc>
+    <lastmod>2020-05-03T16:59:18+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://oganesson.top/post/%E4%B8%8B...%E4%B8%8B%E9%9B%AA%E4%BA%86/</loc>
+    <lastmod>2020-05-03T16:59:18+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://oganesson.top/tags/%E6%97%A5%E5%B8%B8/</loc>
+    <lastmod>2020-05-03T16:59:18+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://oganesson.top/tags/archlinux/</loc>
     <lastmod>2020-05-03T13:30:49+08:00</lastmod>
   </url>
@@ -19,16 +39,6 @@
   
   <url>
     <loc>https://oganesson.top/categories/linux/</loc>
-    <lastmod>2020-05-03T13:30:49+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://oganesson.top/post/</loc>
-    <lastmod>2020-05-03T13:30:49+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://oganesson.top/tags/</loc>
     <lastmod>2020-05-03T13:30:49+08:00</lastmod>
   </url>
   
