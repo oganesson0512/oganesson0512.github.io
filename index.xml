@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Oganesson</title>
+    <link>https://oganesson.top/</link>
+    <description>Recent content on Oganesson</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>cn</language>
+    <lastBuildDate>Sun, 03 May 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://oganesson.top/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>ArchLinux官方安装文档补充</title>
+      <link>https://oganesson.top/post/archlinux%E5%AE%98%E6%96%B9%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3%E8%A1%A5%E5%85%85/</link>
+      <pubDate>Sun, 03 May 2020 13:30:49 +0800</pubDate>
+      
+      <guid>https://oganesson.top/post/archlinux%E5%AE%98%E6%96%B9%E5%AE%89%E8%A3%85%E6%96%87%E6%A1%A3%E8%A1%A5%E5%85%85/</guid>
+      <description>__前排提示,本文并非安装教程
+互联网上部分教程已经过时,请务必按照wiki安装
+本文旨在帮助小白避免由于漏读wiki造成的错误,
+如有更好的建议,欢迎批评指正
+如果你想要安装的话,建议本文与wiki配合使用__
+ 顺便吐槽两句
+ 我记得archwiki原先有一个详细的beginner&amp;rsquo;s guide(2016年删除),虽然不能适应大部分情况,但是比现在这个教程更加友好
+我仍然记得当时grub安装,分区工具的使用都是在guide当中的&amp;hellip;
+当时这个installation guide是建议有基础的人食用的&amp;hellip;.也不知道为什么放弃了,唉
+爷的青春没了(哭哭)
+如果想要看一下原先那个beginner&amp;rsquo;s guide的话,可以在wiki上搜索beginner&amp;rsquo;s guide看一下历史版本(当然不建议再用那个安装了&amp;hellip;)
+(好像废话说的有点多(
+ 本文将会以ArchWiki2019-10-26版本的Installation Guide建议中文版为基础，进行相应的补充
+ 在短时间内应该不会出现无法参考的问题
+如有问题 可以联系作者本人
+本文务必配合archwiki上 installation食用
+***以下是installation guide的部分内容
+需要注意的部分将会进行着重处理***
+  本文将指导如何用官方安装镜&amp;hellip;&amp;hellip;机器将需要一个有效的互联网连接。
+  安装前的准备  安装文件和它的 GnuPG 签名可以从下载页面获取。
+ 重点 必须
+这里是下载地址 请点击下载以获取最新版本的archiso以及其验证密钥
+在下方找到China部分
+ *China
+ 163.com
+cqu.edu.cn
+&amp;hellip;
+zju.edu.cn*
+在其中选择一个并且点击进入下载地址
+个人倾向于使用 tuna.tsinghua.edu.cn
+或者直接进入这里
+验证签名  *建议使用前先验证所下载文件的签名
+ &amp;hellip;*
+  *&amp;hellip;
+  Wikipedia:Public-key_cryptography 获取更多关于公钥加密的信息。*
+这部分为非必须 但是仍然建议 虽然我没验证过</description>
+    </item>
+    
+    <item>
+      <title>关于我</title>
+      <link>https://oganesson.top/about/</link>
+      <pubDate>Sun, 03 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://oganesson.top/about/</guid>
+      <description>姓名：***
+性别：男
+性向：男&amp;amp;女
+年龄：16周岁
+欢迎骚扰XD
+这里是夙夕，目前是一只高二狗
+由于过于小白，所以有什么问题不要问我鸭（当然如果你真的要问我我也会尽力的
+目前学习不再状态（哭
+如果你想来找我玩，请用下面的联系方式联系我鸭
+开学之前应该是每天都会上线的
+开学之后应该只有在周六或者周日能够上线XD
+当然如果你对Linux感兴趣的话，可以来到我们群里吹水鸭(不要问入群问题答案，百度，请
+QQ群：1039477758
+irc和tg群在群公告里有写鸭（tg和qq不互通
+由于money的原因，目前没有服务器，所以本站是个静态站XD，没有办法实现评论的功能（gitalk等插件实在太不搭力啊喂
+Friends鸭（主要是群友XD
+Alexander 生来彷徨的人 stageguard purefkh 啦哆咪 秋枫酱 弥散之雾 print(&amp;ldquo;Hello World&amp;rdquo;) gao_cai_sheng 世一归 一大才 xkeyC Vonlea flous</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://oganesson.top/archives/</link>
+      <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://oganesson.top/archives/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

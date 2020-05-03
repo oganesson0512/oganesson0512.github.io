@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on Oganesson</title>
+    <link>https://oganesson.top/categories/</link>
+    <description>Recent content in Categories on Oganesson</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>cn</language>
+    <lastBuildDate>Sun, 03 May 2020 13:30:49 +0800</lastBuildDate>
+    
+	<atom:link href="https://oganesson.top/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Linux</title>
+      <link>https://oganesson.top/categories/linux/</link>
+      <pubDate>Sun, 03 May 2020 13:30:49 +0800</pubDate>
+      
+      <guid>https://oganesson.top/categories/linux/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

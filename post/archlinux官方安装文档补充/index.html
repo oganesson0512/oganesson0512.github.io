@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="cn"><head>
+    <title>Oganesson</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="theme-color" content="#000084" />
+    <link rel="icon" href="https://oganesson.top/favicon.png">
+    <link rel="canonical" href="https://oganesson.top">
+    
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/bootstrap-responsive.css">
+    <link rel="stylesheet" href="/css/style.css">
+    
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"></button>
+            <a class="brand" href="https://oganesson.top">Oganesson</a>
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    
+                    
+                        
+                            <li>
+                                <a href="/about/">
+                                    
+                                    <span>关于</span>
+                                </a>
+                            </li>
+                        
+                    
+                        
+                            <li>
+                                <a href="/post/">
+                                    
+                                    <span>全部文章</span>
+                                </a>
+                            </li>
+                        
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav><div id="content" class="container">
+
+<div class="row-fluid navmargin">
+    <div class="page-header">
+        <h1>ArchLinux官方安装文档补充 - Sun, May 3, 2020</h1>
+    </div>
+    <p class="lead"></p>
+    <p>__前排提示,本文并非安装教程</p>
+<p>互联网上部分教程已经过时,请务必按照wiki安装</p>
+<p>本文旨在帮助小白避免由于漏读wiki造成的错误,</p>
+<p>如有更好的建议,欢迎批评指正</p>
+<p>如果你想要安装的话,建议本文与wiki配合使用__</p>
+<blockquote>
+<p>顺便吐槽两句</p>
+</blockquote>
+<p>我记得archwiki原先有一个详细的beginner&rsquo;s guide(2016年删除),虽然不能适应大部分情况,但是比现在这个教程更加友好</p>
+<p>我仍然记得当时grub安装,分区工具的使用都是在guide当中的&hellip;</p>
+<p>当时这个installation guide是建议有基础的人食用的&hellip;.也不知道为什么放弃了,唉</p>
+<p>爷的青春没了(哭哭)</p>
+<p>如果想要看一下原先那个beginner&rsquo;s guide的话,可以在wiki上搜索beginner&rsquo;s guide看一下历史版本(当然不建议再用那个安装了&hellip;)</p>
+<p>(好像废话说的有点多(</p>
+<blockquote>
+<p>本文将会以ArchWiki<!-- raw HTML omitted -->2019-10-26<!-- raw HTML omitted -->版本的Installation Guide建议中文版为基础，进行相应的补充</p>
+</blockquote>
+<p>在短时间内应该不会出现无法参考的问题</p>
+<p>如有问题 可以联系作者本人</p>
+<p>本文务必配合archwiki上 installation食用</p>
+<p>***以下是installation guide的部分内容</p>
+<p>需要注意的部分将会进行着重处理***</p>
+<hr>
+<blockquote>
+<p><em>本文将指导如何用官方安装镜&hellip;&hellip;机器将需要一个有效的互联网连接。</em></p>
+</blockquote>
+<hr>
+<h3 id="安装前的准备">安装前的准备</h3>
+<blockquote>
+<p><em>安装文件和它的 GnuPG 签名可以从<!-- raw HTML omitted -->下载<!-- raw HTML omitted -->页面获取。</em></p>
+</blockquote>
+<p><strong>重点 必须</strong></p>
+<p>这里是下载地址 请点击<!-- raw HTML omitted -->下载<!-- raw HTML omitted -->以获取最新版本的archiso以及其验证密钥</p>
+<p>在下方找到China部分</p>
+<blockquote>
+<p>*China</p>
+</blockquote>
+<p>163.com</p>
+<p>cqu.edu.cn</p>
+<p>&hellip;</p>
+<p>zju.edu.cn*</p>
+<p>在其中选择一个并且点击进入下载地址</p>
+<p>个人倾向于使用 tuna.tsinghua.edu.cn</p>
+<p>或者直接进入<a href="https://mirrors.tuna.tsinghua.edu.cn/archlinux/iso/latest/">这里</a></p>
+<h4 id="验证签名">验证签名</h4>
+<blockquote>
+<p>*建议使用前先验证所下载文件的签名</p>
+</blockquote>
+<p>&hellip;*</p>
+<blockquote>
+<blockquote>
+<p>*&hellip;</p>
+</blockquote>
+</blockquote>
+<p>Wikipedia:Public-key_cryptography 获取更多关于公钥加密的信息。*</p>
+<p><em>这部分为非必须 但是仍然建议</em> <del>虽然我没验证过</del></p>
+<p>如果没有条件的话亦可以通过md5 或 sha1密钥验证 你可以在互联网上搜索md5或sha1校验工具进行验证</p>
+<h4 id="启动到-live-环境">启动到 live 环境</h4>
+<blockquote>
+<p><em>live 环境可以从 USB 安装 U 盘、光盘 或带有 PXE 的网络启动进入。 &hellip;</em></p>
+</blockquote>
+<p>\</p>
+<p><em>&hellip;编辑配置文件，可以使用nano、vi 或 vim。</em></p>
+<p><strong>重点 必须</strong></p>
+<p>此处为创建启动盘</p>
+<p>如果你是Windows 可以使用rufus等工具 但etcher全平台通用 (体积较大)</p>
+<p>请自行在网络上下载相关工具进行刻录</p>
+<h4 id="键盘布局">键盘布局</h4>
+<p>此处qwerty键盘的简体中文用户可以略过</p>
+<p>除非键盘布局出现问题</p>
+<h4 id="验证启动模式">验证启动模式</h4>
+<p>如果明确知道你的启动方式，可以略过</p>
+<h4 id="连接到因特网">连接到因特网</h4>
+<p><strong>必须</strong></p>
+<p>如果你是使用wifi进行连接，可尝试直接使用<code>wifi-menu</code>进行配置 相对简单</p>
+<p>如果使用网线并且非拨号则可以直接无视</p>
+<p>如果使用pppoe(拨号) 请参阅<a href="https://wiki.archlinux.org/index.php/Ppp">这里</a>进行配置连接</p>
+<p>然后建议执行一次dhcpcd(如果你是动态ip)</p>
+<p>当然 wiki上的做法是比较保险的做法</p>
+<h4 id="更新系统时间">更新系统时间</h4>
+<p><strong>建议</strong></p>
+<h4 id="建立硬盘分区">建立硬盘分区</h4>
+<p><strong>重点 必须</strong></p>
+<p><strong>重点</strong></p>
+<p><strong>重点</strong></p>
+<p>官方给出的硬盘分区方案并不是很全面，所以这里一定要注意</p>
+<blockquote>
+<p><em>磁盘若被系统识别到，就会被分配为一个 块设备，如 /dev/sda 或者 /dev/nvme0n1。可以使用 <code>lsblk</code> 或者 <code>fdisk</code> 查看：</em></p>
+</blockquote>
+<pre><code>
+fdisk -l
+
+</code></pre><blockquote>
+<p><em>结果中以 rom，loop 或者 airoot 结束的可以被忽略。</em></p>
+</blockquote>
+<blockquote>
+<p><em>&hellip;</em></p>
+</blockquote>
+<p>对于过多的Linux分区的解释，请自行查找度娘</p>
+<p><del>你看我好心地帮你把度娘链接放了出来<a href="https://www.baidu.com/s?ie=utf-8&amp;f=8&amp;rsv_bp=1&amp;rsv_idx=1&amp;tn=baidu&amp;wd=Linux%E6%8C%82%E8%BD%BD%E7%82%B9&amp;oq=Linux%25E5%2588%2586%25E5%258C%25BA&amp;rsv_pq=f2f679080002b6b2&amp;rsv_t=67efO7i3StuuELv2xBh2XSyTbBM%2BVaDiJ1qhLI8T3Jh1GPnCcxMjwX%2FhVpQ&amp;rqlang=cn&amp;rsv_enter=1&amp;rsv_dl=tb&amp;rsv_sug3=10&amp;rsv_sug1=10&amp;rsv_sug7=100&amp;rsv_sug2=0&amp;inputT=3956&amp;rsv_sug4=4333">这里</a></del></p>
+<blockquote>
+<p><em>参阅<a href="https://wiki.archlinux.org/index.php/Partitioning_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#%E5%B8%83%E5%B1%80%E7%A4%BA%E4%BE%8B">布局示例</a>。</em></p>
+</blockquote>
+<p>此处详情请查看布局示例</p>
+<p><del>当然我还是有很多废话要讲</del></p>
+<p>最简单的话捏</p>
+<p>一个根目录/和一个efi目录就够了(UEFI)</p>
+<p>一个根目录/就够了(BIOS)</p>
+<blockquote>
+<p>ps:但是一般都会把home分区独立出来</p>
+</blockquote>
+<blockquote>
+<h5 id="font-colorredwarningfont"><!-- raw HTML omitted -->warning<!-- raw HTML omitted --></h5>
+</blockquote>
+<p>\</p>
+<!-- raw HTML omitted -->
+<p>etc lib sbin bin dev分区请不要设置独立分区（etc好像可以 但一是我不会，二是没必要，就不要弄了啦）</p>
+<p>\</p>
+<p>如果你想要将usr分区独立，需要更改initramfs相关设置</p>
+<p>具体内容见<a href="https://wiki.archlinux.org/index.php/Mkinitcpio_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#/usr_%E6%94%BE%E5%88%B0%E5%8D%95%E7%8B%AC%E5%88%86%E5%8C%BA">此</a></p>
+<!-- raw HTML omitted -->
+<blockquote>
+<h5 id="font-colorredwarningfont-1"><!-- raw HTML omitted -->warning<!-- raw HTML omitted --></h5>
+</blockquote>
+<p>lvm raid 以及disk加密请在此处完成(wiki上有写的哦)</p>
+<p>这里</p>
+<p><a href="https://wiki.archlinux.org/index.php/LVM">LVM</a></p>
+<p><a href="https://wiki.archlinux.org/index.php/RAID">RAID</a></p>
+<p><a href="https://wiki.archlinux.org/index.php/Disk_encryption">加密</a></p>
+<p><strong>请一定要仔细阅读有关wiki</strong></p>
+<p>剩下建立的分区请挂载到相应位置上 比如/挂在/mnt上</p>
+<p>| 分区 | live下挂载点 | 实际挂载点</p>
+<p>| - | - | -</p>
+<p>| 根目录 | /mnt | /</p>
+<p>|home|/mnt/home| /home</p>
+<p>|efi目录|/mnt/boot（或/mnt/boot/EFI亦或/mnt/efi)|/boot（或/boot/EFI亦或/efi)</p>
+<p>|swap| -|-(使用swapon挂载)</p>
+<p>以此类推，不再赘述</p>
+<blockquote>
+<p>ps:那个efi分区基本上是你愿意放哪里就放哪里，但是以/boot身份挂载会造成efi分区大小不足</p>
+</blockquote>
+<p>pps:如果你的电脑上已经有Windows，那么esp分区就是这里efi分区</p>
+<p>你可以尝试使用<code>mount</code>挂载进行查看其中的内容，或者查看分区类型或卷标查找efi分区</p>
+<p>在你规划之后，可以使用适当的分区工具进行分区</p>
+<p>我一般选择cfdisk（虽然有些人认为这个不好）</p>
+<p>当然你可以选择别的分区工具，用法请自己在archwiki上查阅</p>
+<p>\</p>
+<h4 id="格式化分区">格式化分区</h4>
+<p><strong>重要 必须</strong></p>
+<blockquote>
+<p>*当分区建立好了，这些分区都需要使用适当的<a href="https://wiki.archlinux.org/index.php/File_systems_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)">文件系统</a></p>
+</blockquote>
+<p>进行格式化。举个例子，如果根分区在  <code>/dev/sdX1</code> 上并且会使用 <code>ext4</code> 文件系统，运行：*</p>
+<pre><code>
+mkfs.ext4 /dev/sdX1
+
+</code></pre><p>简单来说，我个人比较倾向于ext4文件系统作为日常使用</p>
+<p>当然你也可以使用其他文件系统诸如XFS、F2FS之流，但是ext4在无损与动态调整分区大小等等等方面支持更加完善，网络上相关资料也比较多</p>
+<p>如果你想要使用其他文件系统，请参考<a href="https://wiki.archlinux.org/index.php/File_systems_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)">文件系统</a></p>
+<h5 id="font-colorredwarningfont-2"><!-- raw HTML omitted -->warning<!-- raw HTML omitted --></h5>
+<!-- raw HTML omitted -->
+<p>请注意在一些除grub外的引导器(bootloader)外,可能缺少对除了ext4的支持(甚至有的可能ext4都不支持?(未考证))</p>
+<p>\</p>
+<p>此时需要建立一个受bootloader支持的分区格式的boot分区</p>
+<p>\</p>
+<p>当然如果你是小白,建议使用grub+ext4的方式</p>
+<!-- raw HTML omitted -->
+<h4 id="挂载分区">挂载分区</h4>
+<p><strong>必须</strong></p>
+<blockquote>
+<p><em>将根分区挂载到 /mnt，例如：</em></p>
+</blockquote>
+<pre><code>
+mount /dev/sdX1 /mnt
+
+</code></pre><p><em>&hellip;</em></p>
+<p>总而言之 就是按照当时规划出来的分区进行规划</p>
+<hr>
+<h3 id="安装">安装</h3>
+<h4 id="选择镜像">选择镜像</h4>
+<p><strong>十分建议(除非你在外国)</strong></p>
+<blockquote>
+<p><em>文件 <code>/etc/pacman.d/mirrorlist</code> 定义了软件包会从哪个 <a href="https://wiki.archlinux.org/index.php/Mirrors">镜像源</a> 下载。在 LiveCD 启动的系统上，所有的镜像都被启用，并且在镜像被制作时，我们已经通过他们的同步情况和速度排序。</em></p>
+</blockquote>
+<p><em>&hellip;</em></p>
+<p>简单来说,就是让你修改mirrorlist</p>
+<p>简单来说,你只要在mirrorlist的头部设置上<del>你喜爱的</del>稳定的镜像源</p>
+<p>我比较习惯直接加入</p>
+<pre><code>
+Server = https://tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch
+
+</code></pre><p>在文件的头部</p>
+<h4 id="安装必须的软件包">安装必须的软件包</h4>
+<p><strong>必须 建议</strong></p>
+<blockquote>
+<p><em>使用 <a href="https://git.archlinux.org/arch-install-scripts.git/tree/pacstrap.in">pacstrap</a> 脚本，安装 base 软件包和 Linux <a href="https://wiki.archlinux.org/index.php/Kernel">内核</a>以及常规硬件的固件：</em></p>
+</blockquote>
+<pre><code>
+pacstrap /mnt base linux linux-firmware
+
+</code></pre><p><em>&hellip;</em></p>
+<p>emmmmmmm</p>
+<p>由于arch改掉了base包组,导致了很多工具不在base包组当中</p>
+<p>为了完善体验 我们将会安装vim nano man等软件包以及base-devel软件包组</p>
+<p>将wiki中<code>pastrap</code>命令替换为下面这个</p>
+<pre><code>
+pacstrap /mnt base linux linux-firmware nano vim man-db man-pages texinfo dhcpcd netctl ifconfig dialog
+
+</code></pre><p>所以说其实只有这里是最重要的，毕竟这里是真正的安装系统</p>
+<hr>
+<h3 id="配置系统">配置系统</h3>
+<h4 id="fstab">Fstab</h4>
+<p><strong>必须 重点</strong></p>
+<blockquote>
+<p><em>用以下命令生成 [fstab]https://wiki.archlinux.org/index.php/Fstab) 文件 (用 -U 或 -L 选项设置UUID 或卷标)：</em></p>
+</blockquote>
+<pre><code>
+genfstab -U /mnt &gt;&gt; /mnt/etc/fstab
+
+</code></pre><p><em>强烈建议 在执行完以上命令后，后检查一下生成的 /mnt/etc/fstab 文件是否正确。</em></p>
+<p>~当然虽然上面强烈建议,但是平常我都不看的~</p>
+<p>当然不要学我</p>
+<p>fstab相关信息参考<a href="https://wiki.archlinux.org/index.php/Fstab">这里</a></p>
+<h4 id="chroot">Chroot</h4>
+<p><strong>必须</strong></p>
+<blockquote>
+<p><em>Change root 到新安装的系统：</em></p>
+</blockquote>
+<pre><code>
+arch-chroot /mnt
+
+</code></pre><h4 id="时区">时区</h4>
+<p>建议设置 但是不是必须</p>
+<p>所以自己看wiki去吧</p>
+<h4 id="本土化">本土化</h4>
+<p><strong>强烈不建议(如果你是中文、日文、韩文等东亚或其他字体)(西文字体用户可以按照wiki进行设置)</strong></p>
+<p><strong>如果需要中文化后,请在安装桌面环境后进行</strong></p>
+<p>当然这篇文章是不会介绍的(自己挖坑XD)</p>
+<h4 id="网络">网络</h4>
+<p>hostname步骤可以省略(不建议)</p>
+<p>设置网络与live时几乎相同</p>
+<h4 id="initramfs">Initramfs</h4>
+<p><strong>对部分用户重点</strong></p>
+<blockquote>
+<p><em>你通常不需要创建 initramfs，</em></p>
+</blockquote>
+<p>\</p>
+<p><em>&hellip;</em></p>
+<p>简单来说,如果你没有设置lvm 加密与 raid或者是独立usr分区时,完完全全可以略过</p>
+<p><strong><!-- raw HTML omitted -->但是<!-- raw HTML omitted --></strong></p>
+<p><!-- raw HTML omitted --> 如果你设置了以上东西,务必设置,否则必然无法开机<!-- raw HTML omitted --></p>
+<p>请自行参考<a href="https://wiki.archlinux.org/index.php/Mkinitcpio">mkinitcpio</a></p>
+<h4 id="root-密码">Root 密码</h4>
+<p><strong>强烈建议</strong></p>
+<blockquote>
+<p><em>设置 Root 密码</em></p>
+</blockquote>
+<pre><code>
+passwd
+
+</code></pre><h4 id="安装引导程序">安装引导程序</h4>
+<p><strong>必须 重点</strong> 除非你的本机上有存在的引导器并且你会设置它,否最将会<!-- raw HTML omitted -->无法开机<!-- raw HTML omitted --></p>
+<blockquote>
+<p><em>你需要安装 Linux 引导程序以在安装后启动系统，你可以使用的的引导程序在 <a href="https://wiki.archlinux.org/index.php/Boot_loaders_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)">启动加载器</a> 中，请选择一个并且安装并配置它，比如 <a href="https://wiki.archlinux.org/index.php/GRUB">GRUB</a>。</em></p>
+</blockquote>
+<p>这里真的非常重要，但是在installation guide给出的篇幅比较少，自然也就比较容易出错</p>
+<p>此处详细内容须移步到:</p>
+<p><a href="https://wiki.archlinux.org/index.php/GRUB">GRUB</a></p>
+<p><a href="https://wiki.archlinux.org/index.php/Arch_boot_process#Boot_loader">启动引导器</a></p>
+<p>目前来讲,如果没有黑苹果这类特殊的需求的话,grub目前是最好的选择</p>
+<p>如果你有黑苹果的话,可以考虑使用clover直接引导Linux(OpenCore我不知道)</p>
+<p>如果仅仅是嫌弃Grub太丑,你可以选择rEFInd进行引导</p>
+<p>其他的视情况考虑</p>
+<p>这里以grub为例,简单地配置一下BootLoader以及厘清在Grub中的坑</p>
+<p>首先第一步是安装grub</p>
+<pre><code>
+pacman -S grub os-prober efibootmgr
+
+</code></pre><p>注意:安装os-prober的作用是为了识别其他操作系统</p>
+<p>如果你是单盘安装,可以不安装os-prober这个包</p>
+<p>如果你使用BIOS,则无需安装efibootmgr包</p>
+<ol>
+<li>如果你是BIOS,请执行这个</li>
+</ol>
+<pre><code>
+grub-install --target=i386-pc /dev/sdX
+
+</code></pre><p>注意:/dev/sdX指的是你的硬盘而不是分区,比如你的根目录在/dev/sda5上,那么这里的sdX应该替换为sda</p>
+<p>2.如果你用的是UEFI,执行</p>
+<pre><code>
+grub-install --target=x86_64-efi --efi-directory=_esp_ --bootloader-id=_GRUB_
+
+</code></pre><p>解释:<em>esp</em> 处就是你挂载的efi分区的目录,比如/boot/EFI</p>
+<p>后面的_GRUB_ 是你设置的启动项的名称,是在你UEFI固件设置中看到的名称</p>
+<p>下一步 配置grub</p>
+<p>由于你已经安装了os-prober,你可以直接执行</p>
+<pre><code>
+grub-mkconfig -o /boot/grub/grub.cfg
+
+</code></pre><p>当然,理论上来讲你的基本系统已经全部配置完成</p>
+<p>如果有需要的话可以在grub里安装诸如gnome等软件包</p>
+<hr>
+<h3 id="重启">重启</h3>
+<blockquote>
+<p><em>输入 exit 或按 Ctrl+d 退出 chroot 环境。</em></p>
+</blockquote>
+<p>\</p>
+<p><em>可选用 umount -R /mnt 手动卸载被挂载的分区：这有助于</em></p>
+<p>\</p>
+<p><em>&hellip;</em></p>
+<p>这里你就按照wiki来弄吧,你觉得重启是不是必须内容?</p>
+<p>~如果你觉得不是,欢迎右(左)上角退出~</p>
+<hr>
+<h3 id="安装后的工作">安装后的工作</h3>
+<p>自己看看吧233</p>
+<p>如果出现问题,请</p>
+<p><strong>善用搜索</strong></p>
+<p>~不要找我~</p>
+<p>你可以加入我们的qun(企鹅)讨论</p>
+<p>1039477758</p>
+<p>欢迎进去py(滑稽)</p>
+<p>里面有超多大佬的</p>
+<p>当然如果你喜欢我的文章,可以持续关注我的blog以及酷安哦</p>
+<p>blog:https://oganesson0512.github.io/</p>
+<p>(尚未完善)</p>
+<p>酷安:@夙夕</p>
+
+    <h4><a href="https://oganesson.top">回到主页</a></h4>
+</div>
+
+
+        </div><footer class="container">
+    <hr class="soften">
+    <p>
+        &copy; 
+        
+            Oganesson
+        
+        <span id="thisyear">2020</span>
+        
+             | 建立于 <a href="//gohugo.io" target="_blank">Hugo</a>
+        
+    </p>
+    <p class="text-center">
+        <a href="https://weibo.com/6105737781/profile?topnav=1&amp;wvr=6&amp;is_all=1">Weibo</a> 
+        <a href="https://clinux.co/u/oganesson">Clinux</a> 
+        <a href="https://github.com/oganesson0512">GitHub</a> 
+        <a href="https://gitlab.com/oganesson0512">GitLab</a>
+	<a href="https://gitee.com/oganesson">Gitee</a>
+	<a href="https://space.bilibili.com/82145450">Bilibili</a>  	
+	wechat&qq:1301511091 coolapk:夙夕 telegram:oganesson0512 email:w1301511091@hotmail.com
+    </p>
+</footer>
+
+<script src="/js/jquery.js"></script>
+<script src="/js/bootstrap-386.js"></script>
+<script src="/js/bootstrap-transition.js"></script>
+<script src="/js/bootstrap-alert.js"></script>
+<script src="/js/bootstrap-modal.js"></script>
+<script src="/js/bootstrap-dropdown.js"></script>
+<script src="/js/bootstrap-scrollspy.js"></script>
+<script src="/js/bootstrap-tab.js"></script>
+<script src="/js/bootstrap-tooltip.js"></script>
+<script src="/js/bootstrap-popover.js"></script>
+<script src="/js/bootstrap-button.js"></script>
+<script src="/js/bootstrap-collapse.js"></script>
+<script src="/js/bootstrap-carousel.js"></script>
+<script src="/js/bootstrap-typeahead.js"></script>
+<script src="/js/bootstrap-affix.js"></script>
+<script>
+    _386 = { 
+        fastLoad: false ,
+        onePass: false , 
+        speedFactor: 1 
+    };
+
+    
+    function ThisYear() {
+        document.getElementById('thisyear').innerHTML = new Date().getFullYear();
+    };
+</script>
+</body>
+</html>

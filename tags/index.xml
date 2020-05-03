@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Oganesson</title>
+    <link>https://oganesson.top/tags/</link>
+    <description>Recent content in Tags on Oganesson</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>cn</language>
+    <lastBuildDate>Sun, 03 May 2020 13:30:49 +0800</lastBuildDate>
+    
+	<atom:link href="https://oganesson.top/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>ArchLinux</title>
+      <link>https://oganesson.top/tags/archlinux/</link>
+      <pubDate>Sun, 03 May 2020 13:30:49 +0800</pubDate>
+      
+      <guid>https://oganesson.top/tags/archlinux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>教程</title>
+      <link>https://oganesson.top/tags/%E6%95%99%E7%A8%8B/</link>
+      <pubDate>Sun, 03 May 2020 13:30:49 +0800</pubDate>
+      
+      <guid>https://oganesson.top/tags/%E6%95%99%E7%A8%8B/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>index</title>
+      <link>https://oganesson.top/tags/index/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://oganesson.top/tags/index/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
